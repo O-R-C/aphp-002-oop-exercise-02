@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Objects\Company\SmallDepartment;
+namespace Objects\Company;
 
 class Employee implements \Interfaces\Employee
 {
@@ -12,6 +12,14 @@ class Employee implements \Interfaces\Employee
   private ?string $department = null;
   private ?string $position = null;
   private ?int $salary = null;
+
+  /**
+   * @param string $name Имя сотрудника
+   * @param string $surname Фамилия сотрудника
+   * @param int $age Возраст сотрудника
+   * 
+   * @throws \Exception
+   */
 
   public function __construct(string $name, string $surname, int $age)
   {
@@ -74,13 +82,32 @@ class Employee implements \Interfaces\Employee
     return $this->department;
   }
 
+  public function setDepartment(string $department): void
+  {
+    $this->department = $department;
+  }
+
   public function getPosition(): string
   {
     return $this->position;
   }
 
+  public function setPosition(string $position): void
+  {
+    $this->position = $position;
+  }
+
   public function getSalary(): int
   {
     return $this->salary;
+  }
+
+  public function setSalary(int $salary): void
+  {
+    if ($salary < 0) {
+      throw new \Exception('Salary cannot be negative');
+    }
+
+    $this->salary = $salary;
   }
 }
