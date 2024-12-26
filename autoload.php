@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-function autoload(string $className): void
+function loadClass(string $className): void
 {
-  $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
-  require_once __DIR__ . DIRECTORY_SEPARATOR . $className . '.php';
+  $file = str_replace('\\', DIRECTORY_SEPARATOR, $className) . '.php';
+  if (file_exists($file)) {
+    require_once $file;
+  }
 }
 
-spl_autoload_register('autoload');
+spl_autoload_register('loadClass');
