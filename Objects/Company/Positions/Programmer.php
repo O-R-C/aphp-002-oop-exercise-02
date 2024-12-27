@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Objects\Company\SmallDepartment;
+namespace Objects\Company\Positions;
 
-use Objects\Company\Employee as Employee;
 use Interfaces\ApplicationCreator as ApplicationCreator;
 use Interfaces\WebinarSpeaker as WebinarSpeaker;
 

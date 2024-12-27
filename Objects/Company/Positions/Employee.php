@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Objects\Company;
+namespace Objects\Company\Positions;
 
 class Employee implements \Interfaces\Employee
 {
