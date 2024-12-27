@@ -12,6 +12,7 @@ class Employee implements \Interfaces\Employee
   private ?string $department = null;
   private ?string $position = null;
   private ?int $salary = null;
+  protected array $skills = [];
 
   /**
    * @param string $name Имя сотрудника
