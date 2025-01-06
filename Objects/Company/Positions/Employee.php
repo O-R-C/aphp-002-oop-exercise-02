@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Objects\Company\Positions;
 
-class Employee implements \Interfaces\Employee
+class Employee implements \Interfaces\Employee, \Interfaces\Departments, \Interfaces\ApplicationCreator, \Interfaces\WebinarSpeaker, \Interfaces\Lead
 {
+  use \Traits\Departments, \Traits\Skills, \Traits\Positions;
+
   protected string $name;
   protected string $surname;
   protected int $age;
-  private ?string $department = null;
-  private ?string $position = null;
   private ?int $salary = null;
-  protected array $skills = [];
 
   /**
    * @param string $name Имя сотрудника
@@ -75,27 +74,6 @@ class Employee implements \Interfaces\Employee
   public function getFullName(): string
   {
     return "$this->name $this->surname";
-  }
-
-
-  public function getDepartment(): string
-  {
-    return $this->department;
-  }
-
-  public function setDepartment(string $department): void
-  {
-    $this->department = $department;
-  }
-
-  public function getPosition(): string
-  {
-    return $this->position;
-  }
-
-  public function setPosition(string $position): void
-  {
-    $this->position = $position;
   }
 
   public function getSalary(): int

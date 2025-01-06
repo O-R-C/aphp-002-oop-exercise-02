@@ -6,11 +6,13 @@ namespace Objects\Company\Structure;
 
 class Positions
 {
-  public const PROGRAMMER = 'Programmer';
-  public const DESIGNER = 'Designer';
-  public const MANAGER = 'Manager';
+  public const PROGRAMMER = 'программист';
+  public const DESIGNER = 'дизайнер';
+  public const MANAGER = 'менеджер';
+  public const DIRECTOR = 'директор';
+  public const TESTER = 'тестировщик';
 
-  public const ALL_POSITIONS = [self::PROGRAMMER, self::DESIGNER, self::MANAGER];
+  public const ALL_POSITIONS = [self::PROGRAMMER, self::DESIGNER, self::MANAGER, self::DIRECTOR, self::TESTER];
 
   public static function getAllPositions(): array
   {
