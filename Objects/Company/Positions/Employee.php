@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Objects\Company\Positions;
 
-class Employee implements \Interfaces\Employee, \Interfaces\Departments, \Interfaces\ApplicationCreator, \Interfaces\WebinarSpeaker, \Interfaces\Lead
+abstract class Employee implements \Interfaces\Employee, \Interfaces\Departments, \Interfaces\ApplicationCreator, \Interfaces\WebinarSpeaker, \Interfaces\Lead
 {
   use \Traits\Departments, \Traits\Skills, \Traits\Positions;
 
